@@ -4,16 +4,16 @@ import { Reveal } from "../Reveal";
 import { Section, Title, Mark } from "../ui";
 
 const objections = [
-  ["Não tenho tempo.", "São 10 minutos. Tem versão de 2."],
-  ["Já tentei de tudo.", "Você tentou rotinas longas. Esta tira peso, não adiciona tarefa."],
-  ["E se eu perder um dia?", "Sem culpa. Cada dia tem versão de 2 minutos e você retoma de onde parou no painel."],
-  ["Vale R$ 27?", "Menos que um lanche. Se não valer, devolvemos."],
+  ["Não tenho tempo.", "As missões levam até 10 minutos e têm uma versão reduzida de 2 minutos para dias corridos."],
+  ["Já tentei de tudo.", "O protocolo foi pensado para caber na rotina real: passos curtos, objetivos e sem exigir uma manhã inteira."],
+  ["E se eu perder um dia?", "Não precisa recomeçar do zero. Volte ao painel e continue de onde parou, usando a versão curta quando precisar."],
+  ["Vale R$ 27?", "Você recebe os 7 dias guiados e os materiais por R$ 27. E ainda conta com 7 dias de garantia para avaliar a compra."],
 ] as const;
 
 export function Objections() {
   return (
     <Section className="pt-0 md:pt-0">
-      <Title>Você pode estar <Mark>pensando…</Mark></Title>
+      <Title>Talvez você esteja com uma destas dúvidas:</Title>
       <div className="grid gap-5 md:grid-cols-2">
         {objections.map(([q, a]) => (
           <Reveal key={q} className="card-hard p-7">
@@ -31,17 +31,17 @@ export function ForWho() {
     <Section className="pt-0 md:pt-0">
       <div className="grid gap-6 md:grid-cols-2">
         <Reveal className="card-hard bg-accent p-8">
-          <h3 className="text-3xl font-black">Isto é para você se…</h3>
+          <h3 className="text-3xl font-black">O Protocolo pode fazer sentido para você se…</h3>
           <ul className="mt-5 space-y-3 text-lg">
-            {["Vive no piloto automático", "Quer começar simples", "Tem pouco tempo"].map((t) => (
+            {["Sente que começa o dia reagindo a tudo", "Prefere um plano curto, claro e possível de cumprir", "Precisa de atividades que caibam em uma rotina cheia"].map((t) => (
               <li key={t} className="flex gap-3"><Check className="h-6 w-6 shrink-0 text-primary" strokeWidth={3} aria-hidden />{t}</li>
             ))}
           </ul>
         </Reveal>
         <Reveal className="card-hard p-8">
-          <h3 className="text-3xl font-black">Isto NÃO é para você se…</h3>
+          <h3 className="text-3xl font-black">Talvez não seja o que você procura se…</h3>
           <ul className="mt-5 space-y-3 text-lg">
-            {["Busca tratamento clínico. O desafio não substitui psicólogo ou médico.", "Quer mágica sem agir."].map((t) => (
+            {["Procura diagnóstico ou tratamento para uma condição de saúde. Este material é educativo e não substitui acompanhamento profissional.", "Espera uma mudança automática sem reservar alguns minutos para praticar."].map((t) => (
               <li key={t} className="flex gap-3"><X className="h-6 w-6 shrink-0 text-destructive" strokeWidth={3} aria-hidden />{t}</li>
             ))}
           </ul>
@@ -57,8 +57,8 @@ export function Guarantee() {
       <Reveal className="mx-auto flex max-w-4xl flex-col items-center gap-8 text-center md:flex-row md:text-left">
         <BadgeCheck className="h-32 w-32 shrink-0 md:h-40 md:w-40" strokeWidth={1.25} aria-hidden />
         <div>
-          <h2 className="text-4xl font-black leading-tight md:text-5xl">Garantia de 7 dias do Protocolo Cabeça Limpa.</h2>
-          <p className="mt-4 text-xl">Faça o desafio por 7 dias. Se sentir que não valeu, pede o reembolso e devolvemos 100%. Sem perguntas, sem burocracia.</p>
+          <h2 className="text-4xl font-black leading-tight md:text-5xl">Experimente por 7 dias. Sua compra tem garantia.</h2>
+          <p className="mt-4 text-xl">Você tem 7 dias a partir da compra para conhecer o conteúdo. Se decidir que não é para você, solicite o reembolso dentro desse prazo, conforme as condições da plataforma de pagamento.</p>
         </div>
       </Reveal>
     </Section>
@@ -98,9 +98,9 @@ export function FinalCta() {
     <section className="flex min-h-[90vh] items-center bg-dark px-5 py-24 text-dark-foreground">
       <Reveal className="mx-auto max-w-4xl text-center">
         <h2 className="text-4xl font-black leading-[1.05] tracking-tight md:text-7xl">
-          Amanhã de manhã, você pode acordar <span className="text-cta">de um jeito diferente</span>, ou do mesmo jeito de sempre.
+          Amanhã, em vez de tentar organizar tudo na cabeça, você pode começar com <span className="text-cta">um passo simples.</span>
         </h2>
-        <p className="mt-6 text-2xl opacity-85">A escolha leva 30 segundos.</p>
+        <p className="mt-6 text-2xl opacity-85">Seu próximo passo pode levar menos de um minuto. A prática começa quando você decidir.</p>
         <div className="mt-10 flex flex-col items-center gap-4">
           <CtaButton>Quero acessar o Protocolo · R$ 27</CtaButton>
           <TrustLine />
