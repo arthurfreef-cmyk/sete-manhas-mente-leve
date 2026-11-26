@@ -1,11 +1,11 @@
-import { Check, Clock, Lock, ShieldCheck, Gift, Star, UserRound } from "lucide-react";
+import { Check, Clock, Lock, ShieldCheck, Star, UserRound } from "lucide-react";
 import { CtaButton } from "../CtaButton";
 import { ProductMockup } from "../ProductMockup";
 import { Reveal } from "../Reveal";
 
 import { UrgencyBar } from "../Behaviors";
 import { Section, Title, Mark } from "../ui";
-import { BONUS_ATIVO, TESTIMONIALS, type Testimonial } from "@/lib/checkout";
+import { TESTIMONIALS, type Testimonial } from "@/lib/checkout";
 
 const days = [
   ["Descarga mental", "5 minutos para esvaziar a cabeça no papel", "Você vai sentir a cabeça esvaziar"],
@@ -53,6 +53,7 @@ export function HowItWorks() {
           ))}
         </ol>
         <Reveal><ProductMockup /></Reveal>
+        <p className="text-sm text-muted-foreground md:col-span-2">Lembretes por WhatsApp e e-mail são opcionais e podem ser ativados dentro da área de membros.</p>
       </div>
     </Section>
   );
@@ -73,17 +74,12 @@ export function Offer() {
       <Title>Tudo o que você recebe <span className="text-cta">hoje</span></Title>
       <Reveal className="mx-auto max-w-2xl rounded-3xl border-4 border-cta bg-dark-card p-6 shadow-cta md:p-10">
         <ul className="divide-y divide-dark-foreground/15">
-          {stack.map(([item, value]) => (
-            <li key={item} className="flex items-center justify-between gap-4 py-4">
-              <span className="flex items-center gap-3 font-semibold"><Check className="h-6 w-6 shrink-0 text-cta" strokeWidth={3} aria-hidden />{item}</span>
-              <span className="shrink-0 text-sm opacity-60 line-through">{value}</span>
+          {stack.map(([item, value, benefit]) => (
+            <li key={item} className="flex items-start justify-between gap-4 py-4">
+              <span className="flex min-w-0 items-start gap-3"><Check className="mt-0.5 h-6 w-6 shrink-0 text-cta" strokeWidth={3} aria-hidden /><span><span className="font-semibold">{item}</span><span className="mt-1 block text-sm font-normal leading-relaxed opacity-80">{benefit}</span></span></span>
+              <span className="shrink-0 text-right text-xs opacity-70"><span className="block">valor de referência</span><span className="text-sm line-through">{value}</span></span>
             </li>
           ))}
-          {BONUS_ATIVO && (
-            <li className="flex items-center justify-between gap-4 py-4">
-              <span className="flex items-center gap-3 font-semibold"><Gift className="h-6 w-6 shrink-0 text-cta" aria-hidden />Mini-guia Noite Leve <em className="text-sm font-normal text-cta">bônus para quem entrar hoje</em></span>
-            </li>
-          )}
         </ul>
         <p className="mt-6 text-center text-lg">Valor de referência: <span className="line-through opacity-70">R$ 161</span></p>
         <div className="mt-8 text-center">
