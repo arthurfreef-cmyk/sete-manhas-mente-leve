@@ -4,8 +4,8 @@ import { Days, HowItWorks, Offer, Testimonials } from "@/components/landing/sect
 import { Objections, ForWho, Guarantee, Faq, FinalCta, Footer } from "@/components/landing/sections/Bottom";
 import { StickyCta, ExitPopup } from "@/components/landing/Behaviors";
 
-const TITLE = "7 Manhãs Mais Leves: pare de acordar com a cabeça a mil";
-const DESC = "Desafio de 7 manhãs, 10 minutos por dia, no seu WhatsApp. Tire o peso da cabeça antes do dia começar. R$ 27 com garantia de 7 dias.";
+const TITLE = "Protocolo Cabeça Limpa | 7 dias para uma manhã mais clara";
+const DESC = "Um protocolo de 7 dias e 10 minutos por manhã para reduzir o ruído mental e começar o dia com clareza. Área de membros, teste, caderno e planner inclusos.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -15,7 +15,11 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/protocolo-cabeca-limpa-og.svg" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESC },
+      { name: "twitter:image", content: "/protocolo-cabeca-limpa-og.svg" },
     ],
   }),
   component: Index,
