@@ -8,19 +8,19 @@ import { Section, Title, Mark } from "../ui";
 import { TESTIMONIALS, type Testimonial } from "@/lib/checkout";
 
 const days = [
-  ["Descarga mental", "5 minutos para esvaziar a cabeça no papel", "Você vai sentir a cabeça esvaziar"],
-  ["Manhã sem tela", "Os primeiros 15 minutos sem celular", "Você começa o dia no seu ritmo, não no dos outros"],
-  ["Corpo antes da mente", "Respiração e alongamento de 3 minutos", "Você acorda o corpo antes das preocupações"],
-  ["Regra das 3", "Escolha apenas 3 prioridades", "Você termina o dia sabendo o que fez de importante"],
-  ["Ambiente leve", "Organize 1 ponto que te incomoda", "Você vê menos bagunça e pensa com mais calma"],
-  ["Luz, água e movimento", "O trio simples da energia", "Você sente mais disposição sem precisar de esforço"],
-  ["Sua manhã mínima", "Monte sua rotina personalizada de 10 minutos", "Você sai com uma manhã que é sua de verdade"],
+  ["Descarga mental", "5 minutos para esvaziar a cabeça no papel", "Tire as preocupações da cabeça e enxergue o que precisa de atenção"],
+  ["Manhã sem tela", "Os primeiros 15 minutos sem celular", "Ganhe alguns minutos antes de entrar nas notificações e demandas"],
+  ["Corpo antes da mente", "Respiração e alongamento de 3 minutos", "Comece com uma pausa breve para despertar o corpo"],
+  ["Regra das 3", "Escolha apenas 3 prioridades", "Tenha três prioridades claras para orientar seu dia"],
+  ["Ambiente leve", "Organize 1 ponto que te incomoda", "Organize um pequeno espaço que costuma roubar sua atenção"],
+  ["Luz, água e movimento", "O trio simples da energia", "Inclua hábitos básicos e simples na sua manhã"],
+  ["Sua manhã mínima", "Monte sua rotina personalizada de 10 minutos", "Monte um roteiro curto que faça sentido para sua rotina"],
 ] as const;
 
 export function Days() {
   return (
     <Section tone="dark">
-      <Title>Sua semana, <span className="text-cta">manhã por manhã</span></Title>
+      <Title>7 dias para construir um começo de dia <span className="text-cta">mais leve</span></Title>
       <ol className="mx-auto max-w-3xl space-y-5 border-l-4 border-cta/40 pl-6 md:pl-10">
         {days.map(([title, mission, benefit], i) => (
           <Reveal as="li" key={title} className="relative rounded-2xl border-2 border-dark-foreground/15 bg-dark-card p-6">
@@ -39,10 +39,10 @@ export function Days() {
 }
 
 export function HowItWorks() {
-  const steps = ["Acesse a Área de Membros por login ou link mágico", "Faça a mini-aula e a missão de 10 minutos no seu ritmo", "Conclua o dia, acompanhe seu progresso e avance"];
+  const steps = ["Assim que o pagamento for aprovado, acesse sua área de membros", "Assista à orientação rápida e faça a missão no seu ritmo", "Marque sua etapa como concluída e acompanhe seu avanço"];
   return (
     <Section>
-      <Title>Como funciona <Mark>na Área de Membros</Mark></Title>
+      <Title>Você não recebe só um PDF. Recebe um caminho <Mark>passo a passo.</Mark></Title>
       <div className="grid items-center gap-12 md:grid-cols-2">
         <ol className="space-y-5">
           {steps.map((s, i) => (
@@ -71,7 +71,7 @@ const stack = [
 export function Offer() {
   return (
     <Section tone="dark" id="oferta">
-      <Title>Tudo o que você recebe <span className="text-cta">hoje</span></Title>
+      <Title>Seu plano completo para começar — <span className="text-cta">por R$ 27</span></Title>
       <Reveal className="mx-auto max-w-2xl rounded-3xl border-4 border-cta bg-dark-card p-6 shadow-cta md:p-10">
         <div className="mx-auto mb-6 w-full max-w-[460px]"><ProductMockup className="max-w-full" /></div>
         <ul className="divide-y divide-dark-foreground/15">
@@ -82,11 +82,11 @@ export function Offer() {
             </li>
           ))}
         </ul>
-        <p className="mt-6 text-center text-lg">Valor de referência: <span className="line-through opacity-70">R$ 161</span></p>
+        <p className="mt-6 text-center text-lg">Somando os materiais, o valor de referência é <span className="line-through opacity-70">R$ 161</span></p>
         <div className="mt-8 text-center">
           <p className="opacity-75">De <span className="line-through">R$ 161</span> por</p>
           <p className="font-display text-8xl font-black leading-none text-cta md:text-9xl">R$ 27</p>
-          <p className="mt-3 opacity-85">ou 1 pagamento único. Menos de R$ 3,90 por manhã.</p>
+          <p className="mt-3 opacity-85">Pagamento único. Dá menos de R$ 3,90 por cada manhã dos 7 dias.</p>
         </div>
         <CtaButton className="mt-8 w-full md:w-full">Quero começar agora</CtaButton>
         <UrgencyBar />
