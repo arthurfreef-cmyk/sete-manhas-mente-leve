@@ -23,10 +23,10 @@ export function Hero() {
         <Reveal>
           <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-cta md:text-sm">Para quem acorda já cansado(a) da própria cabeça</p>
           <h1 className="mt-5 text-[2.6rem] font-black leading-[1.02] tracking-tight md:text-7xl">
-            Protocolo <Mark>Cabeça Limpa</Mark>: 7 dias para sair do caos mental em 10 minutos por manhã.
+            Protocolo <Mark>Cabeça Limpa</Mark>
           </h1>
           <p className="mt-6 text-lg opacity-85 md:text-xl">
-            Sem acordar às 5h. Sem rotina de influencer. Um método simples para descarregar, limpar e priorizar seus pensamentos antes de começar o dia.
+            7 dias para sair do caos mental em 10 minutos por manhã. Sem acordar às 5h, sem rotina de influencer: descarregue, limpe e priorize seus pensamentos antes de começar o dia.
           </p>
           <ul className="mt-6 space-y-3 text-lg">
             {["Área de membros com 7 dias liberados em sequência", "Missões de 10 minutos e versão de 2 minutos para dias difíceis", "Teste, caderno, planner e acompanhamento do progresso"].map((t) => (
