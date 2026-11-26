@@ -8,8 +8,8 @@ import {
 export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
-      { title: "Finalizar pedido — 7 Manhãs Mais Leves" },
-      { name: "description", content: "Finalize seu pedido e personalize sua experiência com os materiais extras." },
+      { title: "Finalizar pedido — Protocolo Cabeça Limpa" },
+      { name: "description", content: "Um protocolo de 7 dias e 10 minutos por manhã para reduzir o ruído mental e começar o dia com clareza. Área de membros, teste, caderno e planner inclusos." },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -85,7 +85,7 @@ function Checkout() {
 
     if (name.length < 2) return setError("Informe seu nome completo.");
     if (!/^\S+@\S+\.\S+$/.test(email)) return setError("Confira o endereço de e-mail informado.");
-    if (phone.length < 10 || phone.length > 13) return setError("Informe um WhatsApp válido com DDD.");
+    if (phone && (phone.length < 10 || phone.length > 13)) return setError("Se informar o WhatsApp, confira o DDD e o número.");
     setError(null);
     setSent(true);
   }
@@ -112,10 +112,10 @@ function Checkout() {
             <ShieldCheck className="h-4 w-4" aria-hidden /> Seu próximo passo
           </div>
           <h1 className="text-3xl font-semibold leading-tight text-[#26352f] md:text-5xl">
-            Sua próxima manhã pode começar diferente.
+            Protocolo Cabeça Limpa
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Confira seu pedido, adicione os materiais extras que fizerem sentido e preencha seus dados.
+            7 dias para sair do caos mental em 10 minutos por manhã. Confira seu pedido e personalize sua experiência.
           </p>
           <div className="mx-auto mt-6 flex max-w-md items-center justify-center gap-3 text-xs font-medium text-muted-foreground">
             <span className="flex items-center gap-1.5 text-emerald-700"><CheckCircle2 className="h-4 w-4" /> Pedido</span>
@@ -160,7 +160,7 @@ function Checkout() {
                 </ul>
                 <div className="mt-6 flex flex-wrap items-center justify-between gap-2 border-t border-border pt-5">
                   <span className="text-sm text-muted-foreground">Oferta de acesso</span>
-                  <span className="text-right"><span className="mr-2 text-sm text-muted-foreground line-through">R$ 97,00</span><strong className="text-2xl text-[#26352f]">{money(BASE_PRICE)}</strong></span>
+                  <span className="text-right"><span className="mr-2 text-sm text-muted-foreground line-through">R$ 161,00</span><strong className="text-2xl text-[#26352f]">{money(BASE_PRICE)}</strong></span>
                 </div>
               </section>
 
@@ -218,8 +218,8 @@ function Checkout() {
               <section className="rounded-3xl border border-border bg-white p-5 shadow-soft md:p-8">
                 <div className="mb-5">
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-700">Quase lá</p>
-                  <h2 className="mt-1 text-2xl font-semibold text-[#26352f]">Para onde enviar seu acesso?</h2>
-                  <p className="mt-1 text-sm text-muted-foreground">Preencha com seus dados corretos.</p>
+                  <h2 className="mt-1 text-2xl font-semibold text-[#26352f]">Onde você quer receber seu acesso?</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">O acesso à área de membros será enviado para seu e-mail.</p>
                 </div>
                 <div className="grid gap-4">
                   <label className="block text-sm font-semibold text-[#34443c]">Nome completo
@@ -240,7 +240,7 @@ function Checkout() {
               <section className="rounded-3xl border border-border bg-white p-6 shadow-soft">
                 <h2 className="text-xl font-semibold text-[#26352f]">Resumo do pedido</h2>
                 <div className="mt-5 space-y-3 text-sm">
-                  <div className="flex justify-between gap-3"><span className="text-muted-foreground">7 Manhãs Mais Leves</span><strong>{money(BASE_PRICE)}</strong></div>
+                  <div className="flex justify-between gap-3"><span className="text-muted-foreground">Protocolo Cabeça Limpa</span><strong>{money(BASE_PRICE)}</strong></div>
                   {orderBumps.filter((item) => selected.includes(item.id)).map((item) => (
                     <div key={item.id} className="flex justify-between gap-3"><span className="max-w-[190px] text-muted-foreground">{item.title}</span><strong className="shrink-0">{money(item.price)}</strong></div>
                   ))}
@@ -274,7 +274,7 @@ function Checkout() {
         )}
         <footer className="mt-10 flex flex-col items-center justify-center gap-2 text-center text-xs text-muted-foreground">
           <div className="flex items-center gap-2"><Lock className="h-3.5 w-3.5" /> Seus dados são tratados com cuidado</div>
-          <p>7 Manhãs Mais Leves · Todos os direitos reservados</p>
+          <p>Protocolo Cabeça Limpa · Todos os direitos reservados</p>
         </footer>
       </div>
     </main>
