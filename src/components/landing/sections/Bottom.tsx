@@ -69,7 +69,7 @@ const faq = [
   ["Como recebo o desafio?", "Acesso imediato à área de membros logo após o pagamento. Você também recebe o link de acesso por e-mail."],
   ["Quanto tempo por dia preciso?", "Até 10 minutos. E todo dia tem uma versão de 2 minutos para os dias mais puxados."],
   ["E se eu perder um dia?", "Sem culpa. Cada dia tem versão de 2 minutos e você retoma de onde parou no painel."],
-  ["Precisa de algum material?", "Só papel e caneta."],
+  ["Precisa de algum material?", "O caderno e o planner podem ser usados na tela ou impressos. Papel e caneta ajudam nas atividades, mas não são obrigatórios."],
   ["Isso substitui terapia?", "Não. É um programa educativo de bem-estar e organização mental. Não substitui acompanhamento com psicólogo ou médico."],
   ["E se eu não gostar?", "Você tem garantia incondicional de 7 dias. Se sentir que não valeu, devolvemos 100% do seu dinheiro."],
 ] as const;
