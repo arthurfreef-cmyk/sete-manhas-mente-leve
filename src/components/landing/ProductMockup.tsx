@@ -1,10 +1,10 @@
-import { Check, CheckCircle2, Circle, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 
 export function ProductMockup({ className = "" }: { className?: string }) {
   const tasks = ["Descarregar pensamentos", "Reduzir estímulos", "Definir 3 prioridades", "Preparar o ambiente", "Fazer a manhã mínima", "Revisar o que funcionou", "Montar minha rotina"];
   return (
     <div className={`relative mx-auto aspect-[16/10] w-full max-w-[560px] select-none ${className}`} role="img" aria-label="Mockup do Protocolo Cabeça Limpa com área de membros, caderno, planner e cartão SOS">
-      <div className="absolute left-[2%] top-[10%] z-10 hidden h-[76%] w-[34%] -rotate-[7deg] rounded-md bg-[#e9dfca] p-2 shadow-[0_18px_35px_-15px_rgba(0,0,0,.5)] sm:block">
+      <div className="absolute left-[2%] top-[10%] z-10 h-[76%] w-[29%] -rotate-[7deg] rounded-md bg-[#e9dfca] p-2 shadow-[0_18px_35px_-15px_rgba(0,0,0,.5)] sm:block">
         <div className="flex h-full flex-col items-center justify-between border border-[#9a8c73]/40 bg-[#f6f0e5] px-2 py-3 text-center">
           <span className="text-[7px] font-bold uppercase tracking-[.22em] text-[#64796b]">Caderno de Execução</span>
           <div><span className="font-display text-[clamp(11px,2vw,19px)] font-black leading-none text-[#26352f]">Protocolo<br/>Cabeça Limpa</span><p className="mt-2 text-[7px] leading-tight text-[#58675e]">7 dias para sair do caos mental em 10 minutos por manhã</p></div>
@@ -12,7 +12,7 @@ export function ProductMockup({ className = "" }: { className?: string }) {
           <span className="text-[6px] font-semibold uppercase tracking-widest text-[#64796b]">Método D.L.P.</span>
         </div>
       </div>
-      <div className="absolute right-[1%] top-[8%] z-0 hidden h-[82%] w-[32%] rotate-[6deg] rounded-sm bg-white p-2 shadow-[0_18px_35px_-15px_rgba(0,0,0,.35)] sm:block">
+      <div className="absolute right-[1%] top-[8%] z-0 h-[82%] w-[28%] rotate-[6deg] rounded-sm bg-white p-2 shadow-[0_18px_35px_-15px_rgba(0,0,0,.35)] sm:block">
         <div className="h-full border border-slate-200 p-2 text-[#34443c]">
           <p className="text-center text-[7px] font-black uppercase tracking-widest">Planner · 7 dias</p>
           <p className="mt-1 text-center text-[6px] text-slate-500">Protocolo Cabeça Limpa</p>
@@ -20,7 +20,7 @@ export function ProductMockup({ className = "" }: { className?: string }) {
           <p className="mt-3 text-center text-[6px] text-slate-400">Minha Manhã Mínima</p>
         </div>
       </div>
-      <div className="absolute left-1/2 top-[3%] z-20 h-[94%] w-[42%] min-w-[132px] max-w-[205px] -translate-x-1/2 rounded-[1.55rem] border-[5px] border-[#18241f] bg-[#18241f] p-1 shadow-[0_24px_45px_-15px_rgba(0,0,0,.55)]">
+      <div className="absolute left-1/2 top-[3%] z-20 h-[94%] w-[42%] min-w-[108px] max-w-[205px] -translate-x-1/2 rounded-[1.55rem] border-[5px] border-[#18241f] bg-[#18241f] p-1 shadow-[0_24px_45px_-15px_rgba(0,0,0,.55)]">
         <div className="relative h-full overflow-hidden rounded-[1.15rem] bg-[#f8f7f1] px-2.5 pb-2 pt-5 text-[#26352f] sm:px-3.5 sm:pt-6">
           <div className="absolute left-1/2 top-1.5 h-1 w-10 -translate-x-1/2 rounded-full bg-[#18241f]" />
           <p className="text-[clamp(6px,1vw,9px)] font-extrabold text-[#64806d]">ÁREA DE MEMBROS</p>
