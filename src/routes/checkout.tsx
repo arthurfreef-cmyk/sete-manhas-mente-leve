@@ -11,6 +11,13 @@ export const Route = createFileRoute("/checkout")({
     meta: [
       { title: "Finalizar pedido — Protocolo Cabeça Limpa" },
       { name: "description", content: "Um protocolo de 7 dias e 10 minutos por manhã para reduzir o ruído mental e começar o dia com clareza. Área de membros, teste, caderno e planner inclusos." },
+      { property: "og:title", content: "Protocolo Cabeça Limpa" },
+      { property: "og:description", content: "7 dias para sair do caos mental em 10 minutos por manhã." },
+      { property: "og:image", content: "/protocolo-cabeca-limpa-og.svg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Protocolo Cabeça Limpa" },
+      { name: "twitter:description", content: "7 dias para sair do caos mental em 10 minutos por manhã." },
+      { name: "twitter:image", content: "/protocolo-cabeca-limpa-og.svg" },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -52,7 +59,7 @@ const orderBumps = [
 ] as const;
 
 const included = [
-  ["Área de Membros Cabeça Limpa", "R$ 67", "Avance pelos 7 dias com mini-aulas de 2 minutos, missão de 10 minutos, versão dia ruim, conclusão e progresso."],
+  ["Área de Membros Cabeça Limpa", "R$ 67", "Entre por login ou link mágico e avance pelos 7 dias liberados em sequência. Cada dia inclui mini-aula de 2 minutos, missão de 10 minutos, versão dia ruim de 2 minutos, botão Concluir dia, barra de progresso e contador de dias seguidos."],
   ["Teste Índice de Ruído Mental", "R$ 19", "Responda 8 perguntas no início e no Dia 7 para comparar seu resultado de 0 a 100."],
   ["Caderno de Execução em PDF · 30+ páginas", "R$ 37", "Descarregue pensamentos, aplique a Regra das 3, organize o ambiente e monte sua Manhã Mínima."],
   ["Planner imprimível de 7 dias · PDF A4", "R$ 17", "Acompanhe as missões no papel e visualize o que já concluiu."],
@@ -229,7 +236,7 @@ function Checkout() {
                   <label className="block text-sm font-semibold text-[#34443c]">Nome completo
                     <input name="name" className={field} placeholder="Como podemos chamar você?" autoComplete="name" required />
                   </label>
-                  <label className="block text-sm font-semibold text-[#34443c]">Seu melhor e-mail
+                  <label className="block text-sm font-semibold text-[#34443c]">E-mail para receber seu acesso
                     <input name="email" type="email" className={field} placeholder="voce@email.com" autoComplete="email" required />
                   </label>
                   <label className="block text-sm font-semibold text-[#34443c]">WhatsApp com DDD
@@ -268,7 +275,7 @@ function Checkout() {
               <div className="rounded-2xl border border-emerald-100 bg-emerald-50 p-4">
                 <div className="flex items-start gap-3">
                   <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" aria-hidden />
-                  <div><p className="text-sm font-bold text-emerald-900">Garantia de 7 dias</p><p className="mt-1 text-xs leading-relaxed text-emerald-800">Você tem 7 dias para conhecer o material e decidir se ele faz sentido para você.</p></div>
+                  <div><p className="text-sm font-bold text-emerald-900">Garantia de 7 dias do Protocolo Cabeça Limpa</p><p className="mt-1 text-xs leading-relaxed text-emerald-800">Você tem 7 dias para conhecer o material e decidir se ele faz sentido para você.</p></div>
                 </div>
               </div>
               <p className="px-2 text-center text-[11px] leading-relaxed text-muted-foreground">
@@ -279,6 +286,7 @@ function Checkout() {
         )}
         <footer className="mt-10 flex flex-col items-center justify-center gap-2 text-center text-xs text-muted-foreground">
           <div className="flex items-center gap-2"><Lock className="h-3.5 w-3.5" /> Seus dados são tratados com cuidado</div>
+          <p className="max-w-2xl">O Protocolo Cabeça Limpa é educativo e não substitui acompanhamento com psicólogo ou médico.</p>
           <p>Protocolo Cabeça Limpa · Todos os direitos reservados</p>
         </footer>
       </div>
