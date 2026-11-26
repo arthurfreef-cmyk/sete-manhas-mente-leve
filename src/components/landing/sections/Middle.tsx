@@ -1,8 +1,8 @@
 import { Check, Clock, Lock, ShieldCheck, Gift, AlertTriangle, Star, UserRound } from "lucide-react";
 import { CtaButton, TrustLine } from "../CtaButton";
-import { PhoneMockup } from "../PhoneMockup";
+import { ProductMockup } from "../ProductMockup";
 import { Reveal } from "../Reveal";
-import { CountUp } from "../CountUp";
+
 import { UrgencyBar } from "../Behaviors";
 import { Section, Title, Mark } from "../ui";
 import { BONUS_ATIVO, TESTIMONIALS, type Testimonial } from "@/lib/checkout";
@@ -39,10 +39,10 @@ export function Days() {
 }
 
 export function HowItWorks() {
-  const steps = ["Compre e receba o acesso na hora", "Receba a missão do dia toda manhã", "Responda FEITO e avance"];
+  const steps = ["Acesse a Área de Membros por login ou link mágico", "Faça a mini-aula e a missão de 10 minutos no seu ritmo", "Conclua o dia, acompanhe seu progresso e avance"];
   return (
     <Section>
-      <Title>Como funciona <Mark>no WhatsApp</Mark></Title>
+      <Title>Como funciona <Mark>na Área de Membros</Mark></Title>
       <div className="grid items-center gap-12 md:grid-cols-2">
         <ol className="space-y-5">
           {steps.map((s, i) => (
@@ -52,25 +52,19 @@ export function HowItWorks() {
             </Reveal>
           ))}
         </ol>
-        <Reveal>
-          <PhoneMockup tilt={false} messages={[
-            { from: "bot", text: "Oi! Notei que ontem não rolou a missão." },
-            { from: "bot", text: "Sem culpa. Retome daqui. 💛" },
-            { from: "bot", text: "Hoje vale até a versão de 2 minutos." },
-            { from: "me", text: "FEITO ✅" },
-          ]} />
-        </Reveal>
+        <Reveal><ProductMockup /></Reveal>
       </div>
     </Section>
   );
 }
 
 const stack = [
-  ["7 missões diárias no seu WhatsApp", "R$ 47"],
-  ["Guia do Desafio em PDF", "R$ 27"],
-  ["Checklist de acompanhamento imprimível", "R$ 17"],
-  ["Versão \"dia ruim\" de 2 minutos para cada missão", "R$ 12"],
-  ["Mensagens de resgate se você perder um dia", "R$ 7"],
+  ["Área de Membros Cabeça Limpa: avance pelos 7 dias com mini-aulas, missões, versão dia ruim e progresso", "R$ 67"],
+  ["Teste Índice de Ruído Mental: meça seu resultado no início e compare novamente no Dia 7", "R$ 19"],
+  ["Caderno de Execução em PDF com 30+ páginas: descarregue, aplique a Regra das 3 e organize sua manhã", "R$ 37"],
+  ["Planner imprimível A4 de 7 dias: acompanhe cada missão no papel", "R$ 17"],
+  ["Cartão SOS de 2 Minutos: consulte um passo a passo rápido nos dias de caos", "R$ 12"],
+  ["Certificado e Relatório Final personalizado: visualize sua evolução e sua Manhã Mínima", "R$ 9"],
 ] as const;
 
 export function Offer() {
@@ -91,9 +85,9 @@ export function Offer() {
             </li>
           )}
         </ul>
-        <p className="mt-6 text-center text-lg">Valor real: <span className="line-through opacity-70">R$ <CountUp to={110} /></span></p>
+        <p className="mt-6 text-center text-lg">Valor de referência: <span className="line-through opacity-70">R$ 161</span></p>
         <div className="mt-8 text-center">
-          <p className="opacity-75">De <span className="line-through">R$ 97</span> por</p>
+          <p className="opacity-75">De <span className="line-through">R$ 161</span> por</p>
           <p className="font-display text-8xl font-black leading-none text-cta md:text-9xl">R$ 27</p>
           <p className="mt-3 opacity-85">ou 1 pagamento único. Menos de R$ 3,90 por manhã.</p>
         </div>
@@ -127,18 +121,11 @@ function TestimonialCard({ t }: { t: Testimonial }) {
 
 export function Testimonials() {
   const hasReal = TESTIMONIALS.length > 0;
-  if (!hasReal && !import.meta.env.DEV) return null;
+  if (!hasReal) return null;
   return (
     <Section>
       <Title>O que dizem quem já fez</Title>
-      {hasReal ? (
-        <div className="grid gap-6 md:grid-cols-3">{TESTIMONIALS.map((t) => <TestimonialCard key={t.name + t.city} t={t} />)}</div>
-      ) : (
-        <p className="mx-auto flex max-w-xl items-center gap-3 rounded-2xl border-2 border-dashed border-cta p-6 font-semibold">
-          <AlertTriangle className="h-6 w-6 shrink-0 text-cta" aria-hidden />
-          Modo de edição: adicione depoimentos reais em TESTIMONIALS. Esta seção fica oculta no site publicado enquanto estiver vazia.
-        </p>
-      )}
+      <div className="grid gap-6 md:grid-cols-3">{TESTIMONIALS.map((t) => <TestimonialCard key={t.name + t.city} t={t} />)}</div>
     </Section>
   );
 }
