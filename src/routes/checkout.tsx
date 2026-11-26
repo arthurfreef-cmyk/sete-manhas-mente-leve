@@ -61,10 +61,10 @@ const orderBumps = [
 const included = [
   ["Área de Membros Cabeça Limpa", "R$ 67", "Entre por login ou link mágico e avance pelos 7 dias liberados em sequência. Cada dia inclui mini-aula de 2 minutos, missão de 10 minutos, versão dia ruim de 2 minutos, botão Concluir dia, barra de progresso e contador de dias seguidos."],
   ["Teste Índice de Ruído Mental", "R$ 19", "Responda 8 perguntas no início e no Dia 7 para comparar seu resultado de 0 a 100."],
-  ["Caderno de Execução em PDF · 30+ páginas", "R$ 37", "Descarregue pensamentos, aplique a Regra das 3, organize o ambiente e monte sua Manhã Mínima."],
+  ["Caderno de Execução em PDF · 30+ páginas", "R$ 37", "Descarregue pensamentos, aplique a Regra das 3, use o checklist do ambiente e monte sua Manhã Mínima."],
   ["Planner imprimível de 7 dias · PDF A4", "R$ 17", "Acompanhe as missões no papel e visualize o que já concluiu."],
   ["Cartão SOS de 2 Minutos", "R$ 12", "Tenha um passo a passo de 1 página para consultar nos dias de caos."],
-  ["Certificado e Relatório Final personalizado", "R$ 9", "Veja seu resultado, o que mudou e a rotina Minha Manhã Mínima montada no Dia 7."],
+  ["Certificado e Relatório Final personalizado", "R$ 9", "Receba um PDF com seu nome, resultado do teste, o que mudou e a rotina Minha Manhã Mínima montada no Dia 7."],
 ] as const;
 
 const money = (value: number) =>
