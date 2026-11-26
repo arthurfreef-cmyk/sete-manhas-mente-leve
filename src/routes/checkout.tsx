@@ -12,11 +12,11 @@ export const Route = createFileRoute("/checkout")({
       { title: "Finalizar pedido — Protocolo Cabeça Limpa" },
       { name: "description", content: "Um protocolo de 7 dias e 10 minutos por manhã para reduzir o ruído mental e começar o dia com clareza. Área de membros, teste, caderno e planner inclusos." },
       { property: "og:title", content: "Protocolo Cabeça Limpa" },
-      { property: "og:description", content: "7 dias para sair do caos mental em 10 minutos por manhã." },
+      { property: "og:description", content: "7 dias · 10 minutos por manhã" },
       { property: "og:image", content: "/protocolo-cabeca-limpa-og.svg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Protocolo Cabeça Limpa" },
-      { name: "twitter:description", content: "7 dias para sair do caos mental em 10 minutos por manhã." },
+      { name: "twitter:description", content: "7 dias · 10 minutos por manhã" },
       { name: "twitter:image", content: "/protocolo-cabeca-limpa-og.svg" },
       { name: "robots", content: "noindex" },
     ],
@@ -59,12 +59,12 @@ const orderBumps = [
 ] as const;
 
 const included = [
-  ["Área de Membros Cabeça Limpa", "R$ 67", "Entre por login ou link mágico e avance pelos 7 dias liberados em sequência. Cada dia inclui mini-aula de 2 minutos, missão de 10 minutos, versão dia ruim de 2 minutos, botão Concluir dia, barra de progresso e contador de dias seguidos."],
-  ["Teste Índice de Ruído Mental", "R$ 19", "Responda 8 perguntas no início e no Dia 7 para comparar seu resultado de 0 a 100."],
-  ["Caderno de Execução em PDF · 30+ páginas", "R$ 37", "Descarregue pensamentos, aplique a Regra das 3, use o checklist do ambiente e monte sua Manhã Mínima."],
-  ["Planner imprimível de 7 dias · PDF A4", "R$ 17", "Acompanhe as missões no papel e visualize o que já concluiu."],
-  ["Cartão SOS de 2 Minutos", "R$ 12", "Tenha um passo a passo de 1 página para consultar nos dias de caos."],
-  ["Certificado e Relatório Final personalizado", "R$ 9", "Receba um PDF com seu nome, resultado do teste, o que mudou e a rotina Minha Manhã Mínima montada no Dia 7."],
+  ["Área de Membros · 7 dias", "R$ 67", "Aulas curtas e missões diárias."],
+  ["Teste de Ruído Mental", "R$ 19", "Compare seu resultado no início e no final."],
+  ["Caderno de Execução · PDF", "R$ 37", "Exercícios práticos para aplicar o método."],
+  ["Planner de 7 dias · PDF", "R$ 17", "Acompanhe seu progresso."],
+  ["Cartão SOS de 2 minutos", "R$ 12", "Um guia rápido para os dias corridos."],
+  ["Relatório Final personalizado", "R$ 9", "Seu resultado e sua rotina final em PDF."],
 ] as const;
 
 const money = (value: number) =>
@@ -118,13 +118,13 @@ function Checkout() {
       <div className="mx-auto max-w-6xl px-4 pt-8 md:px-8 md:pt-12">
         <div className="mx-auto mb-9 max-w-3xl text-center">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-emerald-800">
-            <ShieldCheck className="h-4 w-4" aria-hidden /> Seu próximo passo
+            <ShieldCheck className="h-4 w-4" aria-hidden /> FINALIZAR PEDIDO
           </div>
           <h1 className="text-3xl font-semibold leading-tight text-[#26352f] md:text-5xl">
             Protocolo Cabeça Limpa
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            7 dias para sair do caos mental em 10 minutos por manhã. Confira seu pedido e personalize sua experiência.
+            Confira seu pedido e finalize seus dados.
           </p>
           <div className="mx-auto mt-6 flex max-w-md items-center justify-center gap-3 text-xs font-medium text-muted-foreground">
             <span className="flex items-center gap-1.5 text-emerald-700"><CheckCircle2 className="h-4 w-4" /> Pedido</span>
@@ -165,13 +165,13 @@ function Checkout() {
                   {included.map(([item, value, benefit]) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-[#42534b]">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden />
-                      <span><span className="font-semibold">{item}</span><span className="ml-2 whitespace-nowrap text-xs text-muted-foreground">valor de referência {value}</span><span className="mt-1 block text-xs leading-relaxed text-muted-foreground">{benefit}</span></span>
+                      <span><span className="font-semibold">{item}</span><span className="ml-2 whitespace-nowrap text-xs text-muted-foreground">{value}</span></span>
                     </li>
                   ))}
                 </ul>
                 <div className="mt-6 flex flex-wrap items-center justify-between gap-2 border-t border-border pt-5">
-                  <span className="text-sm text-muted-foreground">Oferta de acesso</span>
-                  <span className="text-right"><span className="mr-2 text-sm text-muted-foreground line-through">R$ 161,00</span><strong className="text-2xl text-[#26352f]">{money(BASE_PRICE)}</strong></span>
+                  <span className="text-sm text-muted-foreground">TOTAL</span>
+                  <span className="text-right"><span className="mr-2 text-sm text-muted-foreground line-through">R$ 161</span><strong className="text-2xl text-[#26352f]">{money(BASE_PRICE)}</strong></span>
                 </div>
               </section>
 
@@ -228,19 +228,18 @@ function Checkout() {
 
               <section className="rounded-3xl border border-border bg-white p-5 shadow-soft md:p-8">
                 <div className="mb-5">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-700">Quase lá</p>
-                  <h2 className="mt-1 text-2xl font-semibold text-[#26352f]">Onde você quer receber seu acesso?</h2>
-                  <p className="mt-1 text-sm text-muted-foreground">O acesso à área de membros será enviado para seu e-mail.</p>
+                  <h2 className="text-2xl font-semibold text-[#26352f]">Seus dados de acesso</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">Enviaremos o acesso para seu e-mail.</p>
                 </div>
                 <div className="grid gap-4">
-                  <label className="block text-sm font-semibold text-[#34443c]">Nome completo
-                    <input name="name" className={field} placeholder="Como podemos chamar você?" autoComplete="name" required />
+                  <label className="block text-sm font-semibold text-[#34443c]">Nome
+                    <input name="name" className={field} placeholder="Seu nome" autoComplete="name" required />
                   </label>
-                  <label className="block text-sm font-semibold text-[#34443c]">E-mail para receber seu acesso
+                  <label className="block text-sm font-semibold text-[#34443c]">E-mail
                     <input name="email" type="email" className={field} placeholder="voce@email.com" autoComplete="email" required />
                   </label>
                   <label className="block text-sm font-semibold text-[#34443c]">WhatsApp com DDD
-                    <span className="mt-1 block text-xs font-normal text-muted-foreground">Quer lembretes diários? (opcional)</span>
+                    <span className="mt-1 block text-xs font-normal text-muted-foreground">Opcional</span>
                     <input name="phone" type="tel" className={field} placeholder="(11) 99999-9999" autoComplete="tel" inputMode="tel" />
                   </label>
                 </div>
@@ -250,13 +249,13 @@ function Checkout() {
 
             <aside className="space-y-4 lg:sticky lg:top-6">
               <section className="rounded-3xl border border-border bg-white p-6 shadow-soft">
-                <h2 className="text-xl font-semibold text-[#26352f]">Resumo do pedido</h2>
+                <h2 className="text-xl font-semibold text-[#26352f]">Seu pedido</h2>
                 <div className="mt-5 space-y-3 text-sm">
                   <div className="flex justify-between gap-3"><span className="text-muted-foreground">Protocolo Cabeça Limpa</span><strong>{money(BASE_PRICE)}</strong></div>
                   {orderBumps.filter((item) => selected.includes(item.id)).map((item) => (
                     <div key={item.id} className="flex justify-between gap-3"><span className="max-w-[190px] text-muted-foreground">{item.title}</span><strong className="shrink-0">{money(item.price)}</strong></div>
                   ))}
-                  {selected.length === 0 && <p className="rounded-xl bg-slate-50 px-3 py-3 text-xs leading-relaxed text-muted-foreground">Seus adicionais aparecerão aqui quando forem selecionados.</p>}
+                  {selected.length === 0 && <p className="rounded-xl bg-slate-50 px-3 py-3 text-xs leading-relaxed text-muted-foreground">Adicionais opcionais selecionados aparecem aqui.</p>}
                 </div>
                 <div className="mt-5 border-t border-border pt-5">
                   <div className="flex items-end justify-between gap-3">
@@ -266,27 +265,27 @@ function Checkout() {
                   <p className="mt-1 text-right text-xs text-muted-foreground">Pagamento único</p>
                 </div>
                 <button type="submit" className="btn-cta mt-6 w-full px-5 py-4 text-base">
-                  Continuar com meu pedido <ChevronRight className="h-5 w-5" aria-hidden />
+                  FINALIZAR PEDIDO <ChevronRight className="h-5 w-5" aria-hidden />
                 </button>
                 <div className="mt-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-                  <Lock className="h-3.5 w-3.5" aria-hidden /> Seus dados são usados para processar o pedido
+                  <Lock className="h-3.5 w-3.5" aria-hidden /> Seus dados estão protegidos
                 </div>
               </section>
               <div className="rounded-2xl border border-emerald-100 bg-emerald-50 p-4">
                 <div className="flex items-start gap-3">
                   <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" aria-hidden />
-                  <div><p className="text-sm font-bold text-emerald-900">Garantia de 7 dias do Protocolo Cabeça Limpa</p><p className="mt-1 text-xs leading-relaxed text-emerald-800">Você tem 7 dias para conhecer o material e decidir se ele faz sentido para você.</p></div>
+                  <div><p className="text-sm font-bold text-emerald-900">Garantia de 7 dias</p><p className="mt-1 text-xs leading-relaxed text-emerald-800">Não gostou? Solicite seu reembolso dentro do prazo.</p></div>
                 </div>
               </div>
               <p className="px-2 text-center text-[11px] leading-relaxed text-muted-foreground">
-                Ao continuar, você confirma que os dados informados estão corretos. Os adicionais são opcionais e só entram no total quando selecionados.
+                Adicionais são opcionais. Você só paga pelo que selecionar.
               </p>
             </aside>
           </form>
         )}
         <footer className="mt-10 flex flex-col items-center justify-center gap-2 text-center text-xs text-muted-foreground">
-          <div className="flex items-center gap-2"><Lock className="h-3.5 w-3.5" /> Seus dados são tratados com cuidado</div>
-          <p className="max-w-2xl">O Protocolo Cabeça Limpa é educativo e não substitui acompanhamento com psicólogo ou médico.</p>
+          <div className="flex items-center gap-2"><Lock className="h-3.5 w-3.5" /> Compra segura</div>
+          <p className="max-w-2xl">Conteúdo educativo. Não substitui acompanhamento profissional.</p>
           <p>Protocolo Cabeça Limpa · Todos os direitos reservados</p>
         </footer>
       </div>
