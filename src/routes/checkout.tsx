@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState, type FormEvent } from "react";
 import {
   ArrowLeft, AudioLines, Check, CheckCircle2, ChevronRight, Circle,
-  Clock3, FileText, Lock, ShieldCheck, Sparkles, Sunrise, WandSparkles,
+  FileText, Lock, ShieldCheck, Sparkles, Sunrise,
 } from "lucide-react";
 
 export const Route = createFileRoute("/checkout")({
