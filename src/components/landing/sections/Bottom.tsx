@@ -57,7 +57,7 @@ export function Guarantee() {
       <Reveal className="mx-auto flex max-w-4xl flex-col items-center gap-8 text-center md:flex-row md:text-left">
         <BadgeCheck className="h-32 w-32 shrink-0 md:h-40 md:w-40" strokeWidth={1.25} aria-hidden />
         <div>
-          <h2 className="text-4xl font-black leading-tight md:text-5xl">Risco zero. Você só perde se não tentar.</h2>
+          <h2 className="text-4xl font-black leading-tight md:text-5xl">Garantia de 7 dias do Protocolo Cabeça Limpa.</h2>
           <p className="mt-4 text-xl">Faça o desafio por 7 dias. Se sentir que não valeu, pede o reembolso e devolvemos 100%. Sem perguntas, sem burocracia.</p>
         </div>
       </Reveal>
@@ -121,7 +121,7 @@ export function Footer() {
       <nav className="mt-4 flex justify-center gap-5" aria-label="Links legais">
         <a href="#termos" className="hover:underline">Termos</a>
         <a href="#privacidade" className="hover:underline">Privacidade</a>
-        <a href="mailto:contato@protocolocabecalimpa.com.br" className="hover:underline">Contato</a>
+        <a href="mailto:contato@7manhasmaisleves.com.br" className="hover:underline">Contato</a>
       </nav>
       <p className="mt-4">© {new Date().getFullYear()} Protocolo Cabeça Limpa</p>
     </footer>
