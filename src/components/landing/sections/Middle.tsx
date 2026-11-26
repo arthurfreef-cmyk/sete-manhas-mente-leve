@@ -62,10 +62,10 @@ export function HowItWorks() {
 const stack = [
   ["Área de Membros Cabeça Limpa", "R$ 67", "Entre por login ou link mágico e avance pelos 7 dias liberados em sequência. Cada dia inclui mini-aula de 2 minutos, missão de 10 minutos, versão dia ruim de 2 minutos, botão Concluir dia, barra de progresso e contador de dias seguidos."],
   ["Teste Índice de Ruído Mental", "R$ 19", "Responda 8 perguntas no início e refaça o teste no Dia 7. Compare seu resultado de 0 a 100 antes e depois."],
-  ["Caderno de Execução em PDF · 30+ páginas", "R$ 37", "Descarregue os pensamentos, aplique a Regra das 3, organize o ambiente e monte seu plano da Manhã Mínima."],
+  ["Caderno de Execução em PDF · 30+ páginas", "R$ 37", "Descarregue os pensamentos, aplique a Regra das 3, use o checklist do ambiente e monte seu plano da Manhã Mínima."],
   ["Planner imprimível de 7 dias · PDF A4", "R$ 17", "Acompanhe cada missão no papel e marque seu avanço ao longo da semana."],
   ["Cartão SOS de 2 Minutos", "R$ 12", "Consulte uma página de orientação rápida nos dias de caos, também disponível na área de membros."],
-  ["Certificado e Relatório Final personalizado", "R$ 9", "Receba seu resultado, veja o que mudou e registre a rotina Minha Manhã Mínima montada no Dia 7."],
+  ["Certificado e Relatório Final personalizado", "R$ 9", "Receba um PDF personalizado com seu nome, resultado do teste, o que mudou e a rotina Minha Manhã Mínima montada no Dia 7."],
 ] as const;
 
 export function Offer() {
