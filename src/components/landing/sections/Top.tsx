@@ -1,6 +1,6 @@
 import { Check, Smartphone, Brain, AlarmClock, RotateCcw, BatteryLow, PenLine, Sparkles, Target, Star, Users } from "lucide-react";
 import { CtaButton, TrustLine } from "../CtaButton";
-import { PhoneMockup } from "../PhoneMockup";
+import { ProductMockup } from "../ProductMockup";
 import { Reveal } from "../Reveal";
 import { Section, Title, Mark } from "../ui";
 import { PROOF_COUNT, PROOF_RATING } from "@/lib/checkout";
@@ -9,7 +9,7 @@ export function TopBar() {
   return (
     <div className="sticky top-0 z-50 border-b border-dark-foreground/10 bg-dark text-dark-foreground">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5">
-        <p className="text-xs font-semibold md:text-sm">⚡ Desafio de 7 dias • Comece hoje, no seu WhatsApp</p>
+        <p className="text-xs font-semibold md:text-sm">⚡ Protocolo Cabeça Limpa • 7 dias para uma manhã mais clara</p>
         <CtaButton size="sm">Entrar agora</CtaButton>
       </div>
     </div>
@@ -23,18 +23,18 @@ export function Hero() {
         <Reveal>
           <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-cta md:text-sm">Para quem acorda já cansado(a) da própria cabeça</p>
           <h1 className="mt-5 text-[2.6rem] font-black leading-[1.02] tracking-tight md:text-7xl">
-            Pare de acordar com a <Mark>cabeça a mil</Mark>. Em 7 manhãs de 10 minutos, você assume o controle do seu dia.
+            Protocolo <Mark>Cabeça Limpa</Mark>: 7 dias para sair do caos mental em 10 minutos por manhã.
           </h1>
           <p className="mt-6 text-lg opacity-85 md:text-xl">
-            Sem acordar às 5h. Sem rotina de influencer. Sem força de vontade infinita. Um desafio simples, direto no seu WhatsApp, que tira o peso da sua cabeça ANTES de o dia começar.
+            Sem acordar às 5h. Sem rotina de influencer. Um método simples para descarregar, limpar e priorizar seus pensamentos antes de começar o dia.
           </p>
           <ul className="mt-6 space-y-3 text-lg">
-            {["10 minutos por dia (ou 2 nos dias ruins)", "Funciona mesmo se você já desistiu de outras rotinas", "Começa assim que você entra"].map((t) => (
+            {["Área de membros com 7 dias liberados em sequência", "Missões de 10 minutos e versão de 2 minutos para dias difíceis", "Teste, caderno, planner e acompanhamento do progresso"].map((t) => (
               <li key={t} className="flex gap-3"><Check className="mt-0.5 h-6 w-6 shrink-0 text-cta" strokeWidth={3} aria-hidden />{t}</li>
             ))}
           </ul>
           <div className="mt-9 flex flex-col gap-3">
-            <CtaButton>Quero minha manhã mais leve · R$ 27</CtaButton>
+            <CtaButton>Quero limpar minha cabeça · R$ 27</CtaButton>
             <TrustLine />
           </div>
           {(PROOF_COUNT || PROOF_RATING) && (
@@ -44,7 +44,7 @@ export function Hero() {
             </div>
           )}
         </Reveal>
-        <Reveal><PhoneMockup /></Reveal>
+        <Reveal><ProductMockup /></Reveal>
       </div>
     </header>
   );
