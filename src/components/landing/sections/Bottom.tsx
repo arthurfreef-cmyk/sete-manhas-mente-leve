@@ -6,7 +6,7 @@ import { Section, Title, Mark } from "../ui";
 const objections = [
   ["Não tenho tempo.", "São 10 minutos. Tem versão de 2."],
   ["Já tentei de tudo.", "Você tentou rotinas longas. Esta tira peso, não adiciona tarefa."],
-  ["E se eu esquecer um dia?", "Você recebe mensagem de resgate e retoma."],
+  ["E se eu perder um dia?", "Sem culpa. Cada dia tem versão de 2 minutos e você retoma de onde parou no painel."],
   ["Vale R$ 27?", "Menos que um lanche. Se não valer, devolvemos."],
 ] as const;
 
@@ -66,9 +66,9 @@ export function Guarantee() {
 }
 
 const faq = [
-  ["Como recebo o desafio?", "Pelo WhatsApp, logo após a compra. Se preferir, você também pode receber tudo por e-mail."],
+  ["Como recebo o desafio?", "Acesso imediato à área de membros logo após o pagamento. Você também recebe o link de acesso por e-mail."],
   ["Quanto tempo por dia preciso?", "Até 10 minutos. E todo dia tem uma versão de 2 minutos para os dias mais puxados."],
-  ["E se eu perder um dia?", "Sem culpa. Você recebe uma mensagem de resgate e retoma de onde parou."],
+  ["E se eu perder um dia?", "Sem culpa. Cada dia tem versão de 2 minutos e você retoma de onde parou no painel."],
   ["Precisa de algum material?", "Só papel e caneta."],
   ["Isso substitui terapia?", "Não. É um programa educativo de bem-estar e organização mental. Não substitui acompanhamento com psicólogo ou médico."],
   ["E se eu não gostar?", "Você tem garantia incondicional de 7 dias. Se sentir que não valeu, devolvemos 100% do seu dinheiro."],
@@ -102,7 +102,7 @@ export function FinalCta() {
         </h2>
         <p className="mt-6 text-2xl opacity-85">A escolha leva 30 segundos.</p>
         <div className="mt-10 flex flex-col items-center gap-4">
-          <CtaButton>Quero minha manhã mais leve · R$ 27</CtaButton>
+          <CtaButton>Quero acessar o Protocolo · R$ 27</CtaButton>
           <TrustLine />
           <div className="flex flex-wrap justify-center gap-5 text-sm opacity-80">
             <span className="flex items-center gap-2"><Lock className="h-4 w-4" aria-hidden />Pagamento seguro</span>
@@ -121,9 +121,9 @@ export function Footer() {
       <nav className="mt-4 flex justify-center gap-5" aria-label="Links legais">
         <a href="#termos" className="hover:underline">Termos</a>
         <a href="#privacidade" className="hover:underline">Privacidade</a>
-        <a href="mailto:contato@7manhasmaisleves.com.br" className="hover:underline">Contato</a>
+        <a href="mailto:contato@protocolocabecalimpa.com.br" className="hover:underline">Contato</a>
       </nav>
-      <p className="mt-4">© {new Date().getFullYear()} 7 Manhãs Mais Leves</p>
+      <p className="mt-4">© {new Date().getFullYear()} Protocolo Cabeça Limpa</p>
     </footer>
   );
 }
