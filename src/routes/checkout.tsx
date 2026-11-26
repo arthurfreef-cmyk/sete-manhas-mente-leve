@@ -177,6 +177,26 @@ function Checkout() {
 
               <section className="rounded-3xl border border-border bg-white p-5 shadow-soft md:p-8">
                 <div className="mb-5">
+                  <h2 className="text-2xl font-semibold text-[#26352f]">Seus dados de acesso</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">Enviaremos o acesso para seu e-mail.</p>
+                </div>
+                <div className="grid gap-4">
+                  <label className="block text-sm font-semibold text-[#34443c]">Nome
+                    <input name="name" className={field} placeholder="Seu nome" autoComplete="name" required />
+                  </label>
+                  <label className="block text-sm font-semibold text-[#34443c]">E-mail
+                    <input name="email" type="email" className={field} placeholder="voce@email.com" autoComplete="email" required />
+                  </label>
+                  <label className="block text-sm font-semibold text-[#34443c]">WhatsApp com DDD
+                    <span className="mt-1 block text-xs font-normal text-muted-foreground">Opcional</span>
+                    <input name="phone" type="tel" className={field} placeholder="(11) 99999-9999" autoComplete="tel" inputMode="tel" />
+                  </label>
+                </div>
+                {error && <p role="alert" className="mt-4 rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-red-700">{error}</p>}
+              </section>
+
+              <section className="rounded-3xl border border-border bg-white p-5 shadow-soft md:p-8">
+                <div className="mb-5">
                   <div className="inline-flex items-center gap-2 rounded-full bg-amber-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-800">
                     <Sparkles className="h-3.5 w-3.5" /> Turbine sua experiência
                   </div>
@@ -224,26 +244,6 @@ function Checkout() {
                     );
                   })}
                 </div>
-              </section>
-
-              <section className="rounded-3xl border border-border bg-white p-5 shadow-soft md:p-8">
-                <div className="mb-5">
-                  <h2 className="text-2xl font-semibold text-[#26352f]">Seus dados de acesso</h2>
-                  <p className="mt-1 text-sm text-muted-foreground">Enviaremos o acesso para seu e-mail.</p>
-                </div>
-                <div className="grid gap-4">
-                  <label className="block text-sm font-semibold text-[#34443c]">Nome
-                    <input name="name" className={field} placeholder="Seu nome" autoComplete="name" required />
-                  </label>
-                  <label className="block text-sm font-semibold text-[#34443c]">E-mail
-                    <input name="email" type="email" className={field} placeholder="voce@email.com" autoComplete="email" required />
-                  </label>
-                  <label className="block text-sm font-semibold text-[#34443c]">WhatsApp com DDD
-                    <span className="mt-1 block text-xs font-normal text-muted-foreground">Opcional</span>
-                    <input name="phone" type="tel" className={field} placeholder="(11) 99999-9999" autoComplete="tel" inputMode="tel" />
-                  </label>
-                </div>
-                {error && <p role="alert" className="mt-4 rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-red-700">{error}</p>}
               </section>
             </div>
 
