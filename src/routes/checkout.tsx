@@ -4,6 +4,7 @@ import {
   ArrowLeft, AudioLines, Check, CheckCircle2, ChevronRight, Circle,
   FileText, Lock, ShieldCheck, Sparkles, Sunrise,
 } from "lucide-react";
+import { ProductMockup } from "@/components/landing/ProductMockup";
 
 export const Route = createFileRoute("/checkout")({
   head: () => ({
@@ -51,12 +52,13 @@ const orderBumps = [
 ] as const;
 
 const included = [
-  "7 missões diárias pelo WhatsApp",
-  "Guia do Desafio em PDF",
-  "Checklist imprimível",
-  "Versões rápidas de 2 minutos",
-  "Mensagens de resgate para dias difíceis",
-];
+  ["Área de Membros Cabeça Limpa", "R$ 67", "Avance pelos 7 dias com mini-aulas de 2 minutos, missão de 10 minutos, versão dia ruim, conclusão e progresso."],
+  ["Teste Índice de Ruído Mental", "R$ 19", "Responda 8 perguntas no início e no Dia 7 para comparar seu resultado de 0 a 100."],
+  ["Caderno de Execução em PDF · 30+ páginas", "R$ 37", "Descarregue pensamentos, aplique a Regra das 3, organize o ambiente e monte sua Manhã Mínima."],
+  ["Planner imprimível de 7 dias · PDF A4", "R$ 17", "Acompanhe as missões no papel e visualize o que já concluiu."],
+  ["Cartão SOS de 2 Minutos", "R$ 12", "Tenha um passo a passo de 1 página para consultar nos dias de caos."],
+  ["Certificado e Relatório Final personalizado", "R$ 9", "Veja seu resultado, o que mudou e a rotina Minha Manhã Mínima montada no Dia 7."],
+] as const;
 
 const money = (value: number) =>
   value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
@@ -143,18 +145,20 @@ function Checkout() {
           <form onSubmit={onSubmit} noValidate className="grid items-start gap-6 lg:grid-cols-[1fr_360px]">
             <div className="space-y-6">
               <section className="rounded-3xl border border-border bg-white p-5 shadow-soft md:p-8">
+                <div className="mb-5 rounded-2xl bg-[#f4f5ef] p-2 sm:p-4"><ProductMockup className="max-w-full" /></div>
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-700">Seu pedido</p>
-                    <h2 className="mt-1 text-2xl font-semibold text-[#26352f]">7 Manhãs Mais Leves</h2>
-                    <p className="mt-1 text-sm text-muted-foreground">O plano principal para começar com mais clareza e intenção.</p>
+                    <h2 className="mt-1 text-2xl font-semibold text-[#26352f]">Protocolo Cabeça Limpa</h2>
+                    <p className="mt-1 text-sm text-muted-foreground">7 dias para sair do caos mental em 10 minutos por manhã.</p>
                   </div>
                   <span className="shrink-0 rounded-xl bg-emerald-50 px-3 py-2 text-lg font-bold text-emerald-800">{money(BASE_PRICE)}</span>
                 </div>
                 <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                  {included.map((item) => (
+                  {included.map(([item, value, benefit]) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-[#42534b]">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden /> {item}
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden />
+                      <span><span className="font-semibold">{item}</span><span className="ml-2 whitespace-nowrap text-xs text-muted-foreground">valor de referência {value}</span><span className="mt-1 block text-xs leading-relaxed text-muted-foreground">{benefit}</span></span>
                     </li>
                   ))}
                 </ul>
@@ -229,7 +233,8 @@ function Checkout() {
                     <input name="email" type="email" className={field} placeholder="voce@email.com" autoComplete="email" required />
                   </label>
                   <label className="block text-sm font-semibold text-[#34443c]">WhatsApp com DDD
-                    <input name="phone" type="tel" className={field} placeholder="(11) 99999-9999" autoComplete="tel" inputMode="tel" required />
+                    <span className="mt-1 block text-xs font-normal text-muted-foreground">Quer lembretes diários? (opcional)</span>
+                    <input name="phone" type="tel" className={field} placeholder="(11) 99999-9999" autoComplete="tel" inputMode="tel" />
                   </label>
                 </div>
                 {error && <p role="alert" className="mt-4 rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-red-700">{error}</p>}
