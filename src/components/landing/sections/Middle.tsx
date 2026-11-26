@@ -73,6 +73,7 @@ export function Offer() {
     <Section tone="dark" id="oferta">
       <Title>Tudo o que você recebe <span className="text-cta">hoje</span></Title>
       <Reveal className="mx-auto max-w-2xl rounded-3xl border-4 border-cta bg-dark-card p-6 shadow-cta md:p-10">
+        <div className="mx-auto mb-6 w-full max-w-[460px]"><ProductMockup className="max-w-full" /></div>
         <ul className="divide-y divide-dark-foreground/15">
           {stack.map(([item, value, benefit]) => (
             <li key={item} className="flex items-start justify-between gap-4 py-4">
